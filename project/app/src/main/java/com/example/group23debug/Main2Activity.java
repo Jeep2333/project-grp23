@@ -62,6 +62,8 @@ public class Main2Activity extends AppCompatActivity implements View.OnClickList
         String password =passwordEditText.getText().toString();
 
         final Person mPerson = new Person(firstName, lastName, studentNo, email, password);
+        mDatabase.child("users").child(email).setValue(mPerson);
+
 
         mAuth.createUserWithEmailAndPassword(email, password).addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
             @Override
