@@ -12,6 +12,11 @@ import android.widget.CheckBox;
 import android.widget.CompoundButton;
 import android.widget.EditText;
 import android.widget.TextView;
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
+import com.google.firebase.auth.AuthResult;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.database.FirebaseDatabase;
 
 public class MainActivity extends AppCompatActivity {
     private TextView textView;
@@ -37,6 +42,7 @@ public class MainActivity extends AppCompatActivity {
                 Intent intent = new Intent(MainActivity.this,Main3Activity.class);
                 startActivityForResult(intent,0001);
             }
+
         });
         editText = (EditText)findViewById(R.id.passwordid);
         checkBox=(CheckBox)findViewById(R.id.showpassword);

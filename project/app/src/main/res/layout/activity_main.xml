@@ -44,7 +44,7 @@
             android:layout_gravity="bottom"
             android:layout_marginLeft="50dp"
             android:ems="10"
-            android:hint="Email ID"
+            android:hint="User Name"
             android:inputType="textEmailAddress" />
 
         <ImageView
@@ -56,7 +56,7 @@
             android:layout_marginBottom="5dp"
             android:layout_weight="1"
             android:foregroundGravity="bottom"
-            app:srcCompat="@mipmap/email" />
+            app:srcCompat="@mipmap/student" />
 
     </FrameLayout>
 

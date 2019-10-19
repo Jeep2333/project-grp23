@@ -21,7 +21,7 @@ public class Main2Activity extends AppCompatActivity implements View.OnClickList
     TextView textView;
     private EditText firstNameEditText;
     private EditText lastNameEditText;
-    private EditText studentEditText;
+    private EditText typeEditText;
     private EditText emailEditText;
     private EditText passwordEditText;
     private EditText confirmPassEditText;
@@ -35,12 +35,15 @@ public class Main2Activity extends AppCompatActivity implements View.OnClickList
 
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main2);
+
+
         textView=findViewById(R.id.textView2);
         textView.setOnClickListener(new View.OnClickListener(){
             public void onClick(View v){
                 Intent intent = new Intent(Main2Activity.this,MainActivity.class);
-
                 startActivityForResult(intent,0x01);
+
+
             }
         });
 
@@ -54,11 +57,11 @@ public class Main2Activity extends AppCompatActivity implements View.OnClickList
     public void onClick(View v){
         String firstName = firstNameEditText.getText().toString();
         String lastName = lastNameEditText.getText().toString();
-        String studentNo = studentEditText.getText().toString();
+        String studentNo = typeEditText.getText().toString();
         String email = emailEditText.getText().toString();
         String password =passwordEditText.getText().toString();
 
-        final Student mStudent = new Student(firstName, lastName, studentNo, email, password);
+        final Person mPerson = new Person(firstName, lastName, studentNo, email, password);
 
         mAuth.createUserWithEmailAndPassword(email, password).addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
             @Override

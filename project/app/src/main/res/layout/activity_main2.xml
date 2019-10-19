@@ -93,8 +93,8 @@
             android:layout_marginRight="10dp"
             android:layout_weight="1"
             android:ems="10"
-            android:hint="Student Number"
-            android:inputType="number" />
+            android:hint="User Name"
+            android:inputType="textPersonName" />
     </LinearLayout>
 
     <LinearLayout
@@ -180,6 +180,19 @@
         android:layout_height="wrap_content"
         android:layout_weight="1">
 
+        <Switch
+            android:id="@+id/switch1"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:textOff="patient"
+            android:textOn="employee" />
+    </FrameLayout>
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="1">
+
         <Button
             android:id="@+id/button"
             android:layout_width="match_parent"
@@ -190,6 +203,7 @@
             android:textColor="#ffffff"
             android:textSize="20dp"
             android:textStyle="bold" />
+
     </FrameLayout>
 
     <TextView
