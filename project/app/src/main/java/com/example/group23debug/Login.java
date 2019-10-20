@@ -24,6 +24,8 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
+import java.security.NoSuchAlgorithmException;
+
 
 public class Login extends AppCompatActivity {
 
@@ -104,7 +106,11 @@ public class Login extends AppCompatActivity {
     String password;
     public void btnLogin(){
         username = userName.getText().toString();
-        password = passWord.getText().toString();
+        try {
+            password = HashValue.hash(passWord.getText().toString());
+        } catch (NoSuchAlgorithmException e) {
+            e.printStackTrace();
+        }
 
         mRef.child(username).addValueEventListener(new ValueEventListener() {
             @Override

@@ -19,6 +19,9 @@ import com.google.android.gms.tasks.Task;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
+import java.security.NoSuchAlgorithmException;
+import java.util.regex.Pattern;
+
 public class SignUp extends AppCompatActivity  {
 
     private TextView textView;
@@ -78,13 +81,19 @@ public class SignUp extends AppCompatActivity  {
                 if(TextUtils.isEmpty(firstNameEditText.getText())||TextUtils.isEmpty(lastNameEditText.getText())||TextUtils.isEmpty(userNameEditText.getText())||TextUtils.isEmpty(emailEditText.getText())||
                         TextUtils.isEmpty(passwordEditText.getText())||TextUtils.isEmpty(confirmPassEditText.getText())){
                     Toast.makeText(SignUp.this,"Please fill out all questions.",Toast.LENGTH_SHORT).show();
-                }else if(!confirmPassEditText.getText().toString().equals(passwordEditText.getText().toString())){
-                    Toast.makeText(SignUp.this,"Two passwords are not same.Try again.",Toast.LENGTH_SHORT).show();
+                }else if(!confirmPassEditText.getText().toString().equals(passwordEditText.getText().toString())) {
+                    Toast.makeText(SignUp.this, "Two passwords are not same.Try again.", Toast.LENGTH_SHORT).show();
+                }else if(!CheckEmail(emailEditText.getText().toString())) {
+                    Toast.makeText(SignUp.this, "Wrong Email Address.Try again.", Toast.LENGTH_SHORT).show();
                 }else{
                     person.setEmail(emailEditText.getText().toString());
                     person.setFirstName(firstNameEditText.getText().toString());
                     person.setLastName(lastNameEditText.getText().toString());
-                    person.setPassword(passwordEditText.getText().toString());
+                    try {
+                        person.setPassword(HashValue.hash(passwordEditText.getText().toString()));
+                    } catch (NoSuchAlgorithmException e) {
+                        e.printStackTrace();
+                    }
                     person.setPersonType(personType);
                     person.setUserName(userNameEditText.getText().toString());
                     mRef.child(person.getUserName()).setValue(person).addOnCompleteListener(SignUp.this, new OnCompleteListener<Void>() {
@@ -122,6 +131,21 @@ public class SignUp extends AppCompatActivity  {
 
 
 
+
+    }
+    public boolean isValid(String email){
+        String emailRegex = "^[a-zA-Z0-9_+&*-]+(?:\\."+
+                "[a-zA-Z0-9_+&*-]+)*@" +
+                "(?:[a-zA-Z0-9-]+\\.)+[a-z" +
+                "A-Z]{2,7}$";
+        Pattern pat = Pattern.compile(emailRegex);
+        if (email == null){
+            return false;
+        }
+        return pat.matcher(email).matches();
+    }
+    public boolean CheckEmail(String EmailAddress) {
+        return isValid(EmailAddress);
     }
 
 
