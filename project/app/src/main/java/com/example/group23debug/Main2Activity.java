@@ -3,6 +3,8 @@ package com.example.group23debug;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.os.storage.StorageManager;
+import android.text.TextUtils;
 import android.widget.Button;
 import android.widget.CompoundButton;
 import android.content.Intent;
@@ -30,10 +32,12 @@ public class Main2Activity extends AppCompatActivity  {
     private Button signbutton;
     private EditText firstNameEditText;
     private EditText lastNameEditText;
+    private EditText userNameEditText;
     private Switch typeEditText;
     private EditText emailEditText;
     private EditText passwordEditText;
     private EditText confirmPassEditText;
+    private  String personType;
 
 
     FirebaseAuth mAuth;
@@ -52,17 +56,18 @@ public class Main2Activity extends AppCompatActivity  {
         emailEditText=(EditText)findViewById(R.id.editText4);
         passwordEditText=(EditText)findViewById(R.id.editText5);
         confirmPassEditText=(EditText)findViewById(R.id.editText6);
+        userNameEditText =(EditText)findViewById(R.id.editText3) ;
 
         swbutton.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
                 if (isChecked) {
                     //Todo
-
+                    personType = "employee";
                     Toast.makeText(Main2Activity.this,"Sign an employee account",Toast.LENGTH_SHORT).show();
                 }else{
                     //Todo
-
+                    personType = "patient";
                     Toast.makeText(Main2Activity.this,"Sign a patient account",Toast.LENGTH_SHORT).show();
 
                 }
@@ -74,19 +79,17 @@ public class Main2Activity extends AppCompatActivity  {
         signbutton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if(lastNameEditText.isEmpty(Username).toString()==null||
-
-                emailEditText.getText().toString()==null||
-                passwordEditText.getText().toString()==null||
-                confirmPassEditText.getText().toString()==null){
+                if(TextUtils.isEmpty(firstNameEditText.getText())||TextUtils.isEmpty(lastNameEditText.getText())||TextUtils.isEmpty(userNameEditText.getText())||TextUtils.isEmpty(emailEditText.getText())||
+                        TextUtils.isEmpty(passwordEditText.getText())||TextUtils.isEmpty(confirmPassEditText.getText())){
                     Toast.makeText(Main2Activity.this,"Please fill out all questions.",Toast.LENGTH_SHORT).show();
                 }else{
-
+                    signup();
                 }
 
 
             }
         });
+
 
         textView=findViewById(R.id.textView2);
         textView.setOnClickListener(new View.OnClickListener(){
@@ -105,30 +108,40 @@ public class Main2Activity extends AppCompatActivity  {
 
     }
 
-    public void SignUpOnClick(View v){
-        String firstName = firstNameEditText.getText().toString();
-        String lastName = lastNameEditText.getText().toString();
-        String studentNo = typeEditText.getText().toString();
-        String email = emailEditText.getText().toString();
-        String password =passwordEditText.getText().toString();
+    private void signup() {
+       String firstName = firstNameEditText.getText().toString();
+       String lastName = lastNameEditText.getText().toString();
+       String userName = userNameEditText.getText().toString();
+       String email = emailEditText.getText().toString();
+       String password = passwordEditText.getText().toString();
 
-        final Person mPerson = new Person(firstName, lastName, studentNo, email, password);
+       String mpersonType = personType;
 
-        mAuth.createUserWithEmailAndPassword(email, password).addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
-            @Override
-            public void onComplete(@NonNull Task<AuthResult> task) {
-                if(task.isSuccessful()){
-                    finish();
-                    startActivity(
-                            new Intent(getApplicationContext(), Main3Activity.class)
-                    );
-                }else{
-                    Toast.makeText(Main2Activity.this,"Firebase Authentivation Error",Toast.LENGTH_SHORT).show();
+       final  Person newPerson = new Person( firstName ,  lastName, mpersonType, email,  password ,userName);
+       mAuth.createUserWithEmailAndPassword(email, password).addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
+                   @Override
+                   public void onComplete(@NonNull Task<AuthResult> task) {
+                       if (task.isSuccessful()){
+                           mDatabase.getReference("Person")
+                                   .child(mAuth.getCurrentUser().getUid()).setValue(newPerson)
+                                   .addOnCompleteListener(new OnCompleteListener<Void>() {
+                                       @Override
+                                       public void onComplete(@NonNull Task<Void> task) {
+                                           if(task.isSuccessful()){
+                                               finish();
+                                               startActivity(new Intent(getApplicationContext()))
+                                           }
+                                       }
+                                   })
+                       }
+                   }
+               }
+       )
 
-                }
-            }
-        });
+
     }
+
+
 
 
 
