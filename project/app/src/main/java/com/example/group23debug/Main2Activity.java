@@ -22,6 +22,7 @@ import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.android.gms.tasks.OnCompleteListener;
 
@@ -38,12 +39,12 @@ public class Main2Activity extends AppCompatActivity  {
     private EditText passwordEditText;
     private EditText confirmPassEditText;
     private  String personType;
-
-
     FirebaseAuth mAuth;
+
+
     FirebaseDatabase mDatabase;
 
-    @Override
+
 
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -57,17 +58,17 @@ public class Main2Activity extends AppCompatActivity  {
         passwordEditText=(EditText)findViewById(R.id.editText5);
         confirmPassEditText=(EditText)findViewById(R.id.editText6);
         userNameEditText =(EditText)findViewById(R.id.editText3) ;
-
+        mAuth = FirebaseAuth.getInstance();
         swbutton.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
                 if (isChecked) {
                     //Todo
-                    personType = "employee";
+                    personType = swbutton.getTextOn().toString();
                     Toast.makeText(Main2Activity.this,"Sign an employee account",Toast.LENGTH_SHORT).show();
                 }else{
                     //Todo
-                    personType = "patient";
+                    personType = swbutton.getTextOff().toString();
                     Toast.makeText(Main2Activity.this,"Sign a patient account",Toast.LENGTH_SHORT).show();
 
                 }
@@ -83,6 +84,7 @@ public class Main2Activity extends AppCompatActivity  {
                         TextUtils.isEmpty(passwordEditText.getText())||TextUtils.isEmpty(confirmPassEditText.getText())){
                     Toast.makeText(Main2Activity.this,"Please fill out all questions.",Toast.LENGTH_SHORT).show();
                 }else{
+
                     signup();
                 }
 
@@ -118,7 +120,7 @@ public class Main2Activity extends AppCompatActivity  {
        String mpersonType = personType;
 
        final  Person newPerson = new Person( firstName ,  lastName, mpersonType, email,  password ,userName);
-       mAuth.createUserWithEmailAndPassword(email, password).addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
+       mAuth.createUserWithEmailAndPassword(email, password).addOnCompleteListener(Main2Activity.this, new OnCompleteListener<AuthResult>() {
                    @Override
                    public void onComplete(@NonNull Task<AuthResult> task) {
                        if (task.isSuccessful()){
@@ -129,14 +131,18 @@ public class Main2Activity extends AppCompatActivity  {
                                        public void onComplete(@NonNull Task<Void> task) {
                                            if(task.isSuccessful()){
                                                finish();
-                                               startActivity(new Intent(getApplicationContext()))
+                                               startActivity(new Intent (Main2Activity.this, Main3Activity.class));
+                                           }else{
+                                               Toast.makeText(Main2Activity.this,"Firebase Database Error",Toast.LENGTH_SHORT).show();
                                            }
                                        }
-                                   })
+                                   });
+                       }else{
+                           Toast.makeText(Main2Activity.this,"Firebase Authentiaction Error",Toast.LENGTH_SHORT).show();
                        }
                    }
                }
-       )
+       );
 
 
     }

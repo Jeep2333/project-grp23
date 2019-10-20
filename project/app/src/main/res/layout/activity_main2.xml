@@ -146,7 +146,8 @@
             android:layout_weight="1"
             android:ems="10"
             android:hint="Password"
-            android:inputType="textPassword" />
+            android:digits="0123456789qwertyuioplkjhgfdsazxcvbnmQWERTYUIOPASDFGHJKLZXCVBNM"
+            android:inputType="number|textPassword" />
     </LinearLayout>
 
     <LinearLayout
@@ -172,7 +173,8 @@
             android:layout_weight="1"
             android:ems="10"
             android:hint="Confirm Password"
-            android:inputType="textPassword" />
+            android:digits="0123456789qwertyuioplkjhgfdsazxcvbnmQWERTYUIOPASDFGHJKLZXCVBNM"
+            android:inputType="number|textPassword" />
     </LinearLayout>
 
     <LinearLayout

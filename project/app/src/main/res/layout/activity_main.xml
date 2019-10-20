@@ -88,6 +88,7 @@
             android:layout_marginRight="5dp"
             android:ems="10"
             android:hint="Password"
+            android:digits="0123456789qwertyuioplkjhgfdsazxcvbnmQWERTYUIOPASDFGHJKLZXCVBNM"
             android:inputType="numberPassword" />
     </FrameLayout>
 
