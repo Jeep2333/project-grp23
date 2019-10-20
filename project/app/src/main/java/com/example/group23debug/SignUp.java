@@ -4,6 +4,7 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.text.TextUtils;
+import android.text.method.PasswordTransformationMethod;
 import android.widget.Button;
 import android.widget.CompoundButton;
 import android.content.Intent;
@@ -52,7 +53,9 @@ public class SignUp extends AppCompatActivity  {
         typeEditText =(Switch)findViewById(R.id.switch1);
         emailEditText=(EditText)findViewById(R.id.editText4);
         passwordEditText=(EditText)findViewById(R.id.editText5);
+        passwordEditText.setTransformationMethod(PasswordTransformationMethod.getInstance());
         confirmPassEditText=(EditText)findViewById(R.id.editText6);
+        confirmPassEditText.setTransformationMethod(PasswordTransformationMethod.getInstance());
         userNameEditText =(EditText)findViewById(R.id.editText3) ;
         mDatabase = FirebaseDatabase.getInstance();
         mRef = mDatabase.getReference().child(("Person"));

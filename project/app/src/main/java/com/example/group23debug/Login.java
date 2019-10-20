@@ -47,7 +47,7 @@ public class Login extends AppCompatActivity {
 
         userName = (EditText) findViewById(R.id.emailid) ;
         passWord =(EditText) findViewById(R.id.passwordid) ;
-
+        passWord.setTransformationMethod(PasswordTransformationMethod.getInstance());
         checkBox=(CheckBox)findViewById(R.id.showpassword);
 
         mAuth =FirebaseAuth.getInstance();
