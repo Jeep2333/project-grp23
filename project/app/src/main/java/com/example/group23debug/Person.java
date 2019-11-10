@@ -7,7 +7,6 @@ public class Person{
     private String personType;
     private String email;
     private String password;
-    private Service service;
 
     public Person(String firstName , String lastName, String personType, String email, String password ,String userName){
         this.firstName = firstName;
@@ -38,6 +37,4 @@ public class Person{
     public String getPassword() {return password;}
     public  void setPassword(String password) {this.password = password;}
 
-    public Service getService() {return service;}
-    public  void setService(Service service) {this.service = service;}
 }

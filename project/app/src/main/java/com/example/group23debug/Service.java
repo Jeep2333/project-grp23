@@ -2,23 +2,25 @@ package com.example.group23debug;
 
 public class Service {
     private static String name;
-    private static int rank;
-    public Service(String name,int rank){
+    private static String dname;
+    public Service(String name,String dname){
         this.name=name;
-        this.rank=rank;
+        this.dname=dname;
     }
 
     public String getName(){
         return this.name;
     }
-    public void setName(){
+    public void setName(String name){
         this.name=name;
     }
-    public int getRank(){
-        return this.rank;
+
+    public String getdName(){
+        return this.dname;
     }
-    public void setRank(int rank){
-        this.rank=rank;
+    public void setdName(String dname){
+        this.dname=dname;
     }
+
 }
 

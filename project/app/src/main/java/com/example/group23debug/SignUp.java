@@ -35,7 +35,7 @@ public class SignUp extends AppCompatActivity  {
     private EditText emailEditText;
     private EditText passwordEditText;
     private EditText confirmPassEditText;
-    private  String personType;
+    private String personType;
 
 
 
@@ -113,11 +113,7 @@ public class SignUp extends AppCompatActivity  {
                             }
                         }
                     });
-
-
                 }
-
-
             }
         });
 
@@ -127,8 +123,6 @@ public class SignUp extends AppCompatActivity  {
             public void onClick(View v){
                 Intent intent = new Intent(SignUp.this, Login.class);
                 startActivityForResult(intent,0x01);
-
-
             }
         });
 
@@ -159,7 +153,4 @@ public class SignUp extends AppCompatActivity  {
     public boolean isStringOnlyAlphabet(String str){
         return ((str != null)&& (!str.equals(""))&& (str.matches("^[a-zA-Z]*$")));
     }
-
-
-
 }

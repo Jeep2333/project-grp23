@@ -11,8 +11,9 @@
         android:theme="@style/AppTheme">
         <activity android:name=".welcomenor"></activity>
         <activity android:name=".welcomAdm" />
-        <activity android:name=".welcomeAdm" />
+        <activity android:name=".Service" />
         <activity android:name=".SignUp" />
+        <activity android:name=".Manage"/>
         <activity android:name=".Login">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

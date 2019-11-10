@@ -22,6 +22,7 @@ public class welcomAdm extends AppCompatActivity {
     private FirebaseUser mUser;
     private DatabaseReference mDatabase;
     private Button quitbtn;
+    private Button editbtn;
     private TextView firstNameTextView,lastNameTextView,userNameTextView,emailTextView,accountTpyeTextView;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -40,6 +41,7 @@ public class welcomAdm extends AppCompatActivity {
         lastNameTextView =(TextView) findViewById(R.id.textView52);
         emailTextView =(TextView) findViewById(R.id.textView82);
         quitbtn = findViewById(R.id.button22);
+        editbtn = findViewById(R.id.edit_service);
 
         quitbtn.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -48,6 +50,15 @@ public class welcomAdm extends AppCompatActivity {
                 finish();
             }
         });
+        editbtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(welcomAdm.this,Manage.class));
+                finish();
+            }
+        });
+
+
 
         if(i.getStringExtra("username") == null){
             finish();;
