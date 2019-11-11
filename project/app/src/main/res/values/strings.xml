@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">group23debug</string>
+    <string name="app_name">Group23debug</string>
     <string name="Login">LOGIN</string>
     <string name="SIGNUPHERE">NOT A MEMBER YET?SIGN UP HERE</string>
     <string name="MainTextSize">35dp</string>

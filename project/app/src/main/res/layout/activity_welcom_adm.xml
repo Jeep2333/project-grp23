@@ -84,44 +84,39 @@
             android:textSize="24sp" />
 
         <Button
-            android:id="@+id/edit_service"
+            android:id="@+id/button32"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_margin="5dp"
+            android:layout_marginBottom="10dp"
             android:layout_weight="1"
-            android:text="Edit Service"
-            android:textColor="#DF922929"
-            android:textSize="24sp" />
-
-        <LinearLayout
+            android:background="@color/colorPrimary"
+            android:text="MANAGE USER"
+            android:textColor="#ffffff"
+            android:textSize="20dp" />
+        <Button
+            android:id="@+id/button33"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_margin="5dp"
+            android:layout_marginBottom="10dp"
             android:layout_weight="1"
-            android:orientation="horizontal">
+            android:background="@color/colorPrimary"
+            android:text="MANAGE SERVICE"
+            android:textColor="#ffffff"
+            android:textSize="20dp" />
 
-            <Button
-                android:id="@+id/button22"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_margin="5dp"
-                android:layout_marginTop="10dp"
-                android:layout_weight="1"
-                android:background="@color/Red"
-                android:text="LOGOUT"
-                android:textColor="#ffffff"
-                android:textSize="20dp" />
-
-            <Button
-                android:id="@+id/button32"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_margin="5dp"
-                android:layout_marginBottom="10dp"
-                android:layout_weight="1"
-                android:background="@color/colorPrimary"
-                android:text="DELETE USER"
-                android:textColor="#ffffff"
-                android:textSize="20dp" />
-        </LinearLayout>
+        <Button
+            android:id="@+id/button22"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="5dp"
+            android:layout_marginTop="10dp"
+            android:layout_weight="1"
+            android:background="@color/Red"
+            android:text="LOGOUT"
+            android:textColor="#ffffff"
+            android:textSize="20dp" />
 
     </LinearLayout>
 </LinearLayout>

@@ -1,26 +1,28 @@
 package com.example.group23debug;
 
 public class Service {
-    private static String name;
-    private static String dname;
-    public Service(String name,String dname){
-        this.name=name;
-        this.dname=dname;
+    private String name;
+    private String role;
+
+    public Service(String name , String role){
+        this.name = name;
+        this.role = role;
     }
 
-    public String getName(){
+   public  Service(){}
+
+   public String getName(){
         return this.name;
-    }
-    public void setName(String name){
-        this.name=name;
-    }
+   }
+   public void setName(String name){
+        this.name = name;
+   }
+   public String getRole(){
+        return this.role;
+   }
+   public void setRole(String role){
+        this.role = role;
+   }
 
-    public String getdName(){
-        return this.dname;
-    }
-    public void setdName(String dname){
-        this.dname=dname;
-    }
 
 }
-

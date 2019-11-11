@@ -1,5 +1,6 @@
 package com.example.group23debug;
 
+
 public class Person{
     private String firstName;
     private String lastName;
@@ -36,5 +37,4 @@ public class Person{
 
     public String getPassword() {return password;}
     public  void setPassword(String password) {this.password = password;}
-
 }

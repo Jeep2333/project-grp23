@@ -22,7 +22,8 @@ public class welcomAdm extends AppCompatActivity {
     private FirebaseUser mUser;
     private DatabaseReference mDatabase;
     private Button quitbtn;
-    private Button editbtn;
+    private Button manageUser;
+    private Button manageSer;
     private TextView firstNameTextView,lastNameTextView,userNameTextView,emailTextView,accountTpyeTextView;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -41,7 +42,6 @@ public class welcomAdm extends AppCompatActivity {
         lastNameTextView =(TextView) findViewById(R.id.textView52);
         emailTextView =(TextView) findViewById(R.id.textView82);
         quitbtn = findViewById(R.id.button22);
-        editbtn = findViewById(R.id.edit_service);
 
         quitbtn.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -50,16 +50,23 @@ public class welcomAdm extends AppCompatActivity {
                 finish();
             }
         });
-        editbtn.setOnClickListener(new View.OnClickListener() {
+
+        manageUser = findViewById(R.id.button32);
+
+        manageUser.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(welcomAdm.this,Manage.class));
-                finish();
+                startActivity(new Intent(welcomAdm.this,ReviewingUsers.class));
             }
         });
+        manageSer =findViewById(R.id.button33);
 
-
-
+        manageSer.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(welcomAdm.this,editservice.class));
+            }
+        });
         if(i.getStringExtra("username") == null){
             finish();;
             startActivity(new Intent(this, Login.class));
