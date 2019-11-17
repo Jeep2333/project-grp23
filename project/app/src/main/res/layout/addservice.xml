@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:id="@+id/service_list"
+        android:layout_width="match_parent"
+        android:layout_height="278dp"
+        android:hint="@string/service_list"
+        android:textSize="30sp" />
+
+    <EditText
+        android:id="@+id/service_name"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:hint="@string/service_name"
+        android:inputType="textPersonName"
+        android:textSize="30sp"
+        android:autofillHints="" />
+
+    <Button
+        android:id="@+id/Add"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#E1A20C0C"
+        android:text="@string/add"
+        android:textColor="#F7FFFFFF"
+        android:textSize="24sp" />
+</LinearLayout>
