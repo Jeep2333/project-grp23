@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:orientation="vertical"
+    android:layout_height="match_parent"
+    tools:context=".viewclinicemp">
+
+    <ListView
+        android:id="@+id/cliniclistView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="15"
+        >
+
+    </ListView>
+    <Button
+
+        android:layout_width="match_parent"
+        android:id="@+id/addclinicbtn"
+        android:text="ADD"
+
+        android:layout_margin="5dp"
+        android:background="@color/Red"
+        android:layout_weight="1"
+        android:textColor="#ffffff"
+        android:textSize="20dp"
+        android:textStyle="bold"
+        android:layout_height="60dp" />
+
+</LinearLayout>

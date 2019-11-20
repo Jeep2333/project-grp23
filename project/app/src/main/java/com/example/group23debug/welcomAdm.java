@@ -24,6 +24,7 @@ public class welcomAdm extends AppCompatActivity {
     private Button quitbtn;
     private Button manageUser;
     private Button manageSer;
+    private Button manageCli;
     private TextView firstNameTextView,lastNameTextView,userNameTextView,emailTextView,accountTpyeTextView;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -48,6 +49,14 @@ public class welcomAdm extends AppCompatActivity {
             public void onClick(View v) {
                 startActivity(new Intent(welcomAdm.this,Login.class));
                 finish();
+            }
+        });
+
+        manageCli = findViewById(R.id.manageclibtn);
+        manageCli.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(welcomAdm.this,viewclinicadm.class));
             }
         });
 

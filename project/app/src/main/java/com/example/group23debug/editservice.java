@@ -10,6 +10,7 @@ import android.widget.AdapterView;
 import android.widget.Button;
 import android.widget.ListView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.firebase.ui.database.FirebaseListAdapter;
 import com.firebase.ui.database.FirebaseListOptions;
@@ -28,6 +29,7 @@ public class editservice extends AppCompatActivity {
 
         userList = (ListView) findViewById(R.id.servicelistView);
         Query query = FirebaseDatabase.getInstance().getReference().child("Service");
+
         FirebaseListOptions<Service> options = new FirebaseListOptions.Builder<Service>()
                 .setLayout(R.layout.service)
                 .setQuery(query,Service.class)

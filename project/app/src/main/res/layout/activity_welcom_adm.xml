@@ -94,6 +94,20 @@
             android:text="MANAGE USER"
             android:textColor="#ffffff"
             android:textSize="20dp" />
+
+        <Button
+            android:id="@+id/manageclibtn"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="5dp"
+            android:layout_marginBottom="10dp"
+            android:layout_weight="1"
+            android:background="@color/colorPrimary"
+            android:text="MANAGE CLINIC"
+            android:textColor="#ffffff"
+            android:textSize="20dp" />
+
+
         <Button
             android:id="@+id/button33"
             android:layout_width="match_parent"

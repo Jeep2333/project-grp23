@@ -130,6 +130,12 @@ public class Login extends AppCompatActivity {
                             i.putExtra("username",username);
                             startActivity(i);
                             finish();
+                        }else if("employee".equals(person.getPersonType())){
+                            Intent i=new Intent(Login.this, welcom_staff.class);
+                            i.putExtra("username",username);
+                            startActivity(i);
+                            finish();
+
                         }else{
                             Toast.makeText(Login.this,"Login Successful.",Toast.LENGTH_SHORT).show();
                             Intent ii=new Intent(Login.this, welcomenor.class);

@@ -4,8 +4,4 @@
     <string name="SIGNUPHERE">NOT A MEMBER YET?SIGN UP HERE</string>
     <string name="MainTextSize">35dp</string>
     <string name="LittleTextSize">20dp</string>
-    <string name="service_list">Service List</string>
-    <string name="service_name">Service Name</string>
-    <string name="add">Add</string>
-    <string name="working_hour_list">Working Hour List</string>
 </resources>

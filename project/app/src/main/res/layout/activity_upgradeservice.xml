@@ -26,27 +26,60 @@
         android:layout_weight="1"
         android:orientation="vertical">
 
-        <TextView
-            android:id="@+id/servicename"
+        <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="20dp"
-            android:layout_weight="1"
+            android:layout_weight="2"
+            android:layout_height="wrap_content">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:text="Name: "
+                android:textColor="#010101"
+                android:layout_marginLeft="20dp"
+                android:textSize="24sp"
+                android:gravity="center_vertical"
 
-            android:text="Name:"
-            android:textColor="#010101"
-            android:textSize="24sp" />
+                />
+            <TextView
+                android:id="@+id/servicename"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:textColor="#010101"
+                android:textSize="24sp" />
 
-        <EditText
-            android:id="@+id/servicerole"
+
+        </LinearLayout>
+
+        <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="20dp"
-            android:layout_weight="1"
-            android:gravity="center_vertical"
-            android:text="Role:"
-            android:textColor="#010101"
-            android:textSize="24sp" />
+            android:layout_weight="2"
+            android:layout_height="wrap_content">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:text="Role:"
+                android:textColor="#010101"
+                android:layout_marginLeft="20dp"
+                android:textSize="24sp"
+                android:gravity="center_vertical"
+
+                />
+            <EditText
+                android:id="@+id/servicerole"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+
+                android:layout_weight="1"
+                android:gravity="center_vertical"
+
+                android:textColor="#010101"
+                android:textSize="24sp" />
+
+
+        </LinearLayout>
+
+
 
         <Button
             android:id="@+id/upgradebtn"
