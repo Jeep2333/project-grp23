@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 package com.example.group23debug;
 
 import androidx.annotation.NonNull;
@@ -66,3 +67,73 @@ public class deleteuser extends AppCompatActivity {
         });
     }
 }
+=======
+package com.example.group23debug;
+
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.AppCompatActivity;
+
+import android.view.View;
+import android.widget.Button;
+import android.os.Bundle;
+import android.widget.TextView;
+import android.widget.Toast;
+
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+
+public class deleteuser extends AppCompatActivity {
+    TextView username,AccountType ,FirstName,LastName,Email;
+    DatabaseReference ref;
+
+    Button delete;
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_deleteuser);
+
+        username = (TextView) findViewById(R.id.textView1111);
+        AccountType= (TextView) findViewById(R.id.textView117);
+        FirstName = (TextView) findViewById(R.id.textView114);
+        LastName =(TextView) findViewById(R.id.textView115);
+        Email =(TextView) findViewById(R.id.textView118);
+        delete = (Button) findViewById(R.id.del112);
+
+        ref = FirebaseDatabase.getInstance().getReference().child("Person").child(getIntent().getStringExtra("username"));
+
+        username.setText("User Name: "+getIntent().getStringExtra("username"));
+        AccountType.setText("Account Type: "+getIntent().getStringExtra("Account Type"));
+        FirstName.setText("First Name: "+getIntent().getStringExtra("First Name"));
+        LastName.setText("Last Name: "+getIntent().getStringExtra("Last Name"));
+        Email.setText("Email: "+getIntent().getStringExtra("Email"));
+
+
+        delete.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if("administrator".equals(getIntent().getStringExtra(("Account Type")))){
+                    Toast.makeText(deleteuser.this,"Error, Can not delete admission account...",Toast.LENGTH_LONG).show();
+                }else{
+                    ref.removeValue().addOnCompleteListener(new OnCompleteListener<Void>() {
+                        @Override
+                        public void onComplete(@NonNull Task<Void> task) {
+                            if(task.isSuccessful()){
+                                Toast.makeText(deleteuser.this,"Deleted successfully...",Toast.LENGTH_LONG).show();
+                                deleteuser.this.finish();
+                            }else{
+                                Toast.makeText(deleteuser.this,"Error, Not deleted...",Toast.LENGTH_LONG).show();
+                            }
+                        }
+                    });
+
+
+                }
+
+            }
+        });
+    }
+}
+>>>>>>> 0a6e5c46673e01cc365c101d03e6a7a4f9aa0625
