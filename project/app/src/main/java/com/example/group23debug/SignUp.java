@@ -88,6 +88,8 @@ public class SignUp extends AppCompatActivity  {
                     Toast.makeText(SignUp.this, "Two passwords are not same.Try again.", Toast.LENGTH_SHORT).show();
                 }else if(!CheckEmail(emailEditText.getText().toString())) {
                     Toast.makeText(SignUp.this, "Wrong Email Address.Try again.", Toast.LENGTH_SHORT).show();
+                }else if(!CheckName(userNameEditText.getText().toString())||!CheckName(lastNameEditText.getText().toString())||!CheckName(firstNameEditText.getText().toString())){
+                    Toast.makeText(SignUp.this,"Invalid name. Try again.",Toast.LENGTH_SHORT).show();
                 }else{
                     person.setEmail(emailEditText.getText().toString());
                     person.setFirstName(firstNameEditText.getText().toString());
@@ -136,7 +138,7 @@ public class SignUp extends AppCompatActivity  {
 
 
     }
-    public boolean isValid(String email){
+    private boolean isValid(String email){
         String emailRegex = "^[a-zA-Z0-9_+&*-]+(?:\\."+
                 "[a-zA-Z0-9_+&*-]+)*@" +
                 "(?:[a-zA-Z0-9-]+\\.)+[a-z" +
@@ -147,9 +149,17 @@ public class SignUp extends AppCompatActivity  {
         }
         return pat.matcher(email).matches();
     }
-    public boolean CheckEmail(String EmailAddress) {
+    private boolean CheckEmail(String EmailAddress) {
         return isValid(EmailAddress);
     }
+
+
+    public boolean CheckName(String Name){return isStringOnlyAlphabet(Name);}
+
+    public boolean isStringOnlyAlphabet(String str){
+        return ((str != null)&& (!str.equals(""))&& (str.matches("^[a-zA-Z]*$")));
+    }
+
 
 
 }

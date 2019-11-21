@@ -4,14 +4,29 @@
 
     <application
         android:allowBackup="true"
-        android:icon="@mipmap/ic_launcher"
+        android:icon="@drawable/icon"
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".welcomenor"></activity>
+        <activity android:name=".Timer"></activity>
+        <activity android:name=".deleteservicefromclinic" />
+        <activity android:name=".addandrate" />
+        <activity android:name=".addsertocli" />
+        <activity android:name=".deletecclinic" />
+        <activity android:name=".viewclinicadm" />
+        <activity android:name=".editclinic" />
+        <activity android:name=".addclinic" />
+        <activity android:name=".viewclinicemp" />
+        <activity android:name=".viewworkinghours" />
+        <activity android:name=".welcom_staff" />
+        <activity android:name=".upgradeservice" />
+        <activity android:name=".editservice" />
+        <activity android:name=".addservice" />
+        <activity android:name=".deleteuser" />
+        <activity android:name=".ReviewingUsers" />
+        <activity android:name=".welcomenor" />
         <activity android:name=".welcomAdm" />
-        <activity android:name=".welcomeAdm" />
         <activity android:name=".SignUp" />
         <activity android:name=".Login">
             <intent-filter>

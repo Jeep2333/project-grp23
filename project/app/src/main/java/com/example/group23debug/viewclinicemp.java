@@ -16,7 +16,7 @@ import com.firebase.ui.database.FirebaseListOptions;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.Query;
 
-public class viewclinic extends AppCompatActivity {
+public class viewclinicemp extends AppCompatActivity {
 
     ListView clinicList;
     FirebaseListAdapter adapter;
@@ -24,12 +24,12 @@ public class viewclinic extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_clinic);
+        setContentView(R.layout.activity_viewclinicemp);
 
         clinicList = (ListView) findViewById(R.id.cliniclistView);
         Query query = FirebaseDatabase.getInstance().getReference().child("Clinic");
         FirebaseListOptions<ClinicInterface> options = new FirebaseListOptions.Builder<ClinicInterface>()
-                .setLayout(R.layout.singelclinic)
+                .setLayout(R.layout.singelclinicemp)
                 .setQuery(query,ClinicInterface.class)
                 .build();
         adapter = new FirebaseListAdapter(options) {
@@ -57,14 +57,14 @@ public class viewclinic extends AppCompatActivity {
         addClibtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(viewclinic.this,addclinic.class));
+                startActivity(new Intent(viewclinicemp.this,addclinic.class));
             }
         });
         clinicList.setAdapter(adapter);
         clinicList.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int position, long id) {
-                Intent upgrade  = new Intent(viewclinic.this, editclinic.class);
+                Intent upgrade  = new Intent(viewclinicemp.this, editclinic.class);
                 ClinicInterface Cli = (ClinicInterface) adapterView.getItemAtPosition(position);
                 upgrade.putExtra("name",Cli.getClinicName());
                 upgrade.putExtra("address",Cli.getAddress());
