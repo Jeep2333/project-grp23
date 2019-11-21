@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
@@ -32,39 +31,4 @@
         android:id="@+id/clinicpaymentadm"
         android:layout_width="match_parent"
         android:layout_height="wrap_content" />
-=======
-<?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:layout_margin="20dp"
-    android:orientation="vertical"
-    android:padding="20dp">
-    <TextView
-        android:id="@+id/clinicnameadm"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content" />
-
-    <TextView
-        android:id="@+id/clinicaddressadm"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content" />
-
-    <TextView
-        android:id="@+id/clinicphonenumberadm"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content" />
-
-    <TextView
-        android:id="@+id/clinicinsuranceadm"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-
-        />
-
-    <TextView
-        android:id="@+id/clinicpaymentadm"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content" />
->>>>>>> 0a6e5c46673e01cc365c101d03e6a7a4f9aa0625
 </LinearLayout>

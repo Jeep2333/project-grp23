@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
@@ -17,24 +16,4 @@
 
     </ListView>
 
-=======
-<?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:orientation="vertical"
-    tools:context=".viewclinicadm">
-
-    <ListView
-        android:id="@+id/clinicadmlistView"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_weight="15"
-        >
-
-    </ListView>
-
->>>>>>> 0a6e5c46673e01cc365c101d03e6a7a4f9aa0625
 </LinearLayout>

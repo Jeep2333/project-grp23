@@ -1,10 +1,11 @@
 package com.example.group23debug;
 import android.app.Activity;
 import android.app.Instrumentation;
-
+import android.widget.TextView;
 
 
 import androidx.test.rule.ActivityTestRule;
+import androidx.test.runner.MonitoringInstrumentation;
 
 import org.junit.Before;
 import org.junit.Rule;
@@ -14,9 +15,10 @@ import static androidx.test.espresso.Espresso.onView;
 import static androidx.test.espresso.action.ViewActions.click;
 import static androidx.test.espresso.action.ViewActions.closeSoftKeyboard;
 import static androidx.test.espresso.action.ViewActions.typeText;
-
+import static androidx.test.espresso.assertion.ViewAssertions.matches;
+import static androidx.test.espresso.matcher.ViewMatchers.isDisplayed;
 import static androidx.test.espresso.matcher.ViewMatchers.withId;
-
+import static androidx.test.espresso.matcher.ViewMatchers.withText;
 import static androidx.test.platform.app.InstrumentationRegistry.getInstrumentation;
 import static org.junit.Assert.assertNotNull;
 public class LoginpagejumpTest {

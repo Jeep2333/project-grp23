@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 <resources>
     <string name="app_name">Group23debug</string>
     <string name="Login">LOGIN</string>
@@ -6,12 +5,3 @@
     <string name="MainTextSize">35dp</string>
     <string name="LittleTextSize">20dp</string>
 </resources>
-=======
-<resources>
-    <string name="app_name">Group23debug</string>
-    <string name="Login">LOGIN</string>
-    <string name="SIGNUPHERE">NOT A MEMBER YET?SIGN UP HERE</string>
-    <string name="MainTextSize">35dp</string>
-    <string name="LittleTextSize">20dp</string>
-</resources>
->>>>>>> 0a6e5c46673e01cc365c101d03e6a7a4f9aa0625
