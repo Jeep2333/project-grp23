@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".welcomAdm">
+
+
+    <TextView
+        android:id="@+id/textView32"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="20dp"
+        android:layout_weight="1"
+        android:gravity="center|left"
+        android:text="Welcome"
+        android:textColor="@color/colorPrimary"
+        android:textSize="35dp"
+        android:textStyle="bold" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="50dp"
+        android:layout_weight="1"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/textView112"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:layout_weight="1"
+            android:gravity="center_vertical"
+            android:text="User Name:"
+            android:textColor="#010101"
+            android:textSize="24sp" />
+
+        <TextView
+            android:id="@+id/textView72"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:layout_weight="1"
+            android:gravity="center_vertical"
+            android:text="Account Type:"
+            android:textColor="#010101"
+            android:textSize="24sp" />
+
+        <TextView
+            android:id="@+id/textView42"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:layout_weight="1"
+            android:gravity="center_vertical"
+            android:text="Firest Name:"
+            android:textColor="#010101"
+            android:textSize="24sp" />
+
+        <TextView
+            android:id="@+id/textView52"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:layout_weight="1"
+            android:gravity="center_vertical"
+            android:text="Last Name:"
+            android:textColor="#010101"
+            android:textSize="24sp" />
+
+        <TextView
+            android:id="@+id/textView82"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:layout_weight="1"
+            android:gravity="center_vertical"
+            android:text="Email:"
+            android:textColor="#010101"
+            android:textSize="24sp" />
+
+        <Button
+            android:id="@+id/button32"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="5dp"
+            android:layout_marginBottom="10dp"
+            android:layout_weight="1"
+            android:background="@color/colorPrimary"
+            android:text="MANAGE USER"
+            android:textColor="#ffffff"
+            android:textSize="20dp" />
+
+        <Button
+            android:id="@+id/manageclibtn"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="5dp"
+            android:layout_marginBottom="10dp"
+            android:layout_weight="1"
+            android:background="@color/colorPrimary"
+            android:text="MANAGE CLINIC"
+            android:textColor="#ffffff"
+            android:textSize="20dp" />
+
+
+        <Button
+            android:id="@+id/button33"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="5dp"
+            android:layout_marginBottom="10dp"
+            android:layout_weight="1"
+            android:background="@color/colorPrimary"
+            android:text="MANAGE SERVICE"
+            android:textColor="#ffffff"
+            android:textSize="20dp" />
+
+        <Button
+            android:id="@+id/button22"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="5dp"
+            android:layout_marginTop="10dp"
+            android:layout_weight="1"
+            android:background="@color/Red"
+            android:text="LOGOUT"
+            android:textColor="#ffffff"
+            android:textSize="20dp" />
+
+    </LinearLayout>
+</LinearLayout>
