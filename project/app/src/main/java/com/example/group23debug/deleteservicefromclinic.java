@@ -3,7 +3,6 @@ package com.example.group23debug;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
-import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -15,7 +14,7 @@ import com.google.android.gms.tasks.Task;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
-public class deleteservicefromclinic extends AppCompatActivity {
+public class DeleteServiceFromClinic extends AppCompatActivity {
 
     TextView name,role,rate;
     DatabaseReference ref;
@@ -24,7 +23,7 @@ public class deleteservicefromclinic extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_deleteservicefromclinic);
+        setContentView(R.layout.activity_delete_service_from_clinic);
 
         name =(TextView) findViewById(R.id.servicenames);
         role = (TextView) findViewById(R.id.serviceroles);
@@ -51,10 +50,10 @@ public class deleteservicefromclinic extends AppCompatActivity {
                     @Override
                     public void onComplete(@NonNull Task<Void> task) {
                         if(task.isSuccessful()){
-                            Toast.makeText(deleteservicefromclinic.this,"Deleted successfully...",Toast.LENGTH_LONG).show();
-                            deleteservicefromclinic.this.finish();
+                            Toast.makeText(DeleteServiceFromClinic.this,"Deleted successfully...",Toast.LENGTH_LONG).show();
+                            DeleteServiceFromClinic.this.finish();
                         }else{
-                            Toast.makeText(deleteservicefromclinic.this,"Error, Not deleted...",Toast.LENGTH_LONG).show();
+                            Toast.makeText(DeleteServiceFromClinic.this,"Error, Not deleted...",Toast.LENGTH_LONG).show();
                         }
                     }
                 });

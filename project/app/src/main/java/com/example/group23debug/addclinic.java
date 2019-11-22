@@ -15,7 +15,7 @@ import com.google.android.gms.tasks.Task;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
-public class addclinic extends AppCompatActivity {
+public class AddClinic extends AppCompatActivity {
 
     private TextView addName;
     private TextView addPhonenumber;
@@ -30,7 +30,7 @@ public class addclinic extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_addclinic);
+        setContentView(R.layout.activity_add_clinic);
 
         addName = findViewById(R.id.addclinicnametext);
         addPhonenumber = findViewById(R.id.clinicphonetext);
@@ -47,26 +47,26 @@ public class addclinic extends AppCompatActivity {
             public void onClick(View v) {
                 if(TextUtils.isEmpty(addName.getText())||TextUtils.isEmpty(addPhonenumber.getText())
                         ||TextUtils.isEmpty(addAddress.getText())||TextUtils.isEmpty(addInsurance.getText())||TextUtils.isEmpty(addPayment.getText())){
-                    Toast.makeText(addclinic.this,"You are missing some thing. Try again.",Toast.LENGTH_SHORT).show();
+                    Toast.makeText(AddClinic.this,"You are missing some thing. Try again.",Toast.LENGTH_SHORT).show();
                 }
 
                 else if(!CheckName(addName.getText().toString())){
-                    Toast.makeText(addclinic.this,"Invalid name. Try again.",Toast.LENGTH_SHORT).show();
+                    Toast.makeText(AddClinic.this,"Invalid name. Try again.",Toast.LENGTH_SHORT).show();
 
                 }else{
                     clinic = new ClinicInterface(addName.getText().toString(),addAddress.getText().toString(),addPhonenumber.getText().toString(),addInsurance.getText().toString(),addPayment.getText().toString());
 
 
 
-                    mRef.child(addName.getText().toString()).setValue(clinic).addOnCompleteListener(addclinic.this, new OnCompleteListener<Void>() {
+                    mRef.child(addName.getText().toString()).setValue(clinic).addOnCompleteListener(AddClinic.this, new OnCompleteListener<Void>() {
                         @Override
                         public void onComplete(@NonNull Task<Void> task) {
                             if (task.isSuccessful()){
 
-                                Toast.makeText(addclinic.this,"Successful.",Toast.LENGTH_SHORT).show();
+                                Toast.makeText(AddClinic.this,"Successful.",Toast.LENGTH_SHORT).show();
                                 finish();
                             }else{
-                                Toast.makeText(addclinic.this,"Firebase Database Error",Toast.LENGTH_SHORT).show();
+                                Toast.makeText(AddClinic.this,"Firebase Database Error",Toast.LENGTH_SHORT).show();
                             }
                         }
                     });

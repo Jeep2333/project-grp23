@@ -24,7 +24,7 @@ public class viewclinicemp extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_viewclinicemp);
+        setContentView(R.layout.activity_view_clinic_emp);
 
         clinicList = (ListView) findViewById(R.id.cliniclistView);
         Query query = FirebaseDatabase.getInstance().getReference().child("Clinic");
@@ -57,14 +57,14 @@ public class viewclinicemp extends AppCompatActivity {
         addClibtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(viewclinicemp.this,addclinic.class));
+                startActivity(new Intent(viewclinicemp.this, AddClinic.class));
             }
         });
         clinicList.setAdapter(adapter);
         clinicList.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int position, long id) {
-                Intent upgrade  = new Intent(viewclinicemp.this, editclinic.class);
+                Intent upgrade  = new Intent(viewclinicemp.this, ClinicProfile.class);
                 ClinicInterface Cli = (ClinicInterface) adapterView.getItemAtPosition(position);
                 upgrade.putExtra("name",Cli.getClinicName());
                 upgrade.putExtra("address",Cli.getAddress());

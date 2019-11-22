@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:orientation="vertical"
+    android:layout_height="match_parent"
+    tools:context=".AddandRate">
+
+
+    <TextView
+        android:id="@+id/addanrateclinicname"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="20dp"
+        android:layout_weight="2"
+        android:gravity="center|left"
+
+        android:textColor="@color/colorPrimary"
+        android:textSize="35dp"
+        android:textStyle="bold" />
+    <TextView
+
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="20dp"
+
+
+        android:gravity="top"
+        android:text="Add and Rate Service"
+        android:textColor="@color/colorPrimary"
+        android:textSize="35dp"
+        android:textStyle="bold" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="50dp"
+        android:layout_weight="1"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_weight="2"
+            android:layout_height="wrap_content">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:text="Name: "
+                android:textColor="#010101"
+                android:layout_marginLeft="20dp"
+                android:textSize="24sp"
+                android:gravity="center_vertical"
+
+                />
+            <TextView
+                android:id="@+id/addandratename"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:textColor="#010101"
+                android:textSize="24sp" />
+
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_weight="2"
+            android:layout_height="wrap_content">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:text="Role: "
+                android:textColor="#010101"
+                android:layout_marginLeft="20dp"
+                android:textSize="24sp"
+                android:gravity="center_vertical"
+
+                />
+
+            <TextView
+                android:id="@+id/addandraterole"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:textColor="#010101"
+                android:textSize="24sp" />
+
+
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_weight="2"
+            android:layout_height="wrap_content">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:text="Rate: "
+                android:textColor="#010101"
+                android:layout_marginLeft="20dp"
+                android:textSize="24sp"
+                android:gravity="center_vertical"
+
+                />
+            <EditText
+                android:id="@+id/addandraterate"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Rate from A to D."
+                android:layout_weight="1"
+                android:gravity="center_vertical"
+                android:inputType="text"
+                android:textColor="#010101"
+                android:textSize="24sp" />
+
+
+        </LinearLayout>
+
+
+
+        <Button
+            android:id="@+id/addandrateaddbtn"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="5dp"
+            android:layout_marginTop="10dp"
+            android:layout_weight="1"
+            android:background="@color/Red"
+            android:text="Add"
+            android:textColor="#ffffff"
+            android:textSize="20dp" />
+
+
+    </LinearLayout>
+
+
+</LinearLayout>

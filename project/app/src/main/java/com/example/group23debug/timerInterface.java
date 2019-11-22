@@ -4,7 +4,7 @@ public class timerInterface {
     private int month,day,hour;
 
 
-    public timerInterface(int month , int day, int hour){
+    public timerInterface(int day , int month, int hour){
         this.month =month;
         this.day = day;
         this.hour =hour;

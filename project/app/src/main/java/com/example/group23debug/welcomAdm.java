@@ -56,7 +56,7 @@ public class welcomAdm extends AppCompatActivity {
         manageCli.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(welcomAdm.this,viewclinicadm.class));
+                startActivity(new Intent(welcomAdm.this, ViewClinic_Adm.class));
             }
         });
 
@@ -65,7 +65,7 @@ public class welcomAdm extends AppCompatActivity {
         manageUser.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(welcomAdm.this,ReviewingUsers.class));
+                startActivity(new Intent(welcomAdm.this, ListView_users.class));
             }
         });
         manageSer =findViewById(R.id.button33);
@@ -73,7 +73,7 @@ public class welcomAdm extends AppCompatActivity {
         manageSer.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(welcomAdm.this,editservice.class));
+                startActivity(new Intent(welcomAdm.this, AddServiceToListView.class));
             }
         });
         if(i.getStringExtra("username") == null){

@@ -14,7 +14,7 @@ import com.google.android.gms.tasks.Task;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
-public class deleteuser extends AppCompatActivity {
+public class DeleteUser extends AppCompatActivity {
     TextView username,AccountType ,FirstName,LastName,Email;
     DatabaseReference ref;
 
@@ -23,7 +23,7 @@ public class deleteuser extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_deleteuser);
+        setContentView(R.layout.activity_delete_user);
 
         username = (TextView) findViewById(R.id.textView1111);
         AccountType= (TextView) findViewById(R.id.textView117);
@@ -45,16 +45,16 @@ public class deleteuser extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 if("administrator".equals(getIntent().getStringExtra(("Account Type")))){
-                    Toast.makeText(deleteuser.this,"Error, Can not delete admission account...",Toast.LENGTH_LONG).show();
+                    Toast.makeText(DeleteUser.this,"Error, Can not delete admission account...",Toast.LENGTH_LONG).show();
                 }else{
                     ref.removeValue().addOnCompleteListener(new OnCompleteListener<Void>() {
                         @Override
                         public void onComplete(@NonNull Task<Void> task) {
                             if(task.isSuccessful()){
-                                Toast.makeText(deleteuser.this,"Deleted successfully...",Toast.LENGTH_LONG).show();
-                                deleteuser.this.finish();
+                                Toast.makeText(DeleteUser.this,"Deleted successfully...",Toast.LENGTH_LONG).show();
+                                DeleteUser.this.finish();
                             }else{
-                                Toast.makeText(deleteuser.this,"Error, Not deleted...",Toast.LENGTH_LONG).show();
+                                Toast.makeText(DeleteUser.this,"Error, Not deleted...",Toast.LENGTH_LONG).show();
                             }
                         }
                     });

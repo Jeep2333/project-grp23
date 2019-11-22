@@ -24,6 +24,7 @@ public class welcom_staff extends AppCompatActivity {
     private DatabaseReference mDatabase;
     private Button staffClinibtn;
     private Button staffLogoutbtn;
+    private Button timetablebtn;
     private TextView firstNameTextView,lastNameTextView,userNameTextView,emailTextView,accountTpyeTextView;
 
     @Override
@@ -52,6 +53,15 @@ public class welcom_staff extends AppCompatActivity {
                 finish();
             }
         });
+
+        timetablebtn =(Button)findViewById(R.id.timelistbtn) ;
+        timetablebtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(welcom_staff.this, ClinicTimeTable.class));
+            }
+        });
+
         staffClinibtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
