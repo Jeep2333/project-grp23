@@ -94,6 +94,19 @@
             android:textColor="#ffffff"
             android:textSize="20dp" />
 
+        <Button
+            android:id="@+id/searchcl"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="5dp"
+            android:layout_marginTop="10dp"
+            android:layout_weight="1"
+            android:background="@color/Red"
+            android:onClick="search"
+            android:text="Search Clinic"
+            android:textColor="#ffffff"
+            android:textSize="20dp" />
+
     </LinearLayout>
 
 </LinearLayout>

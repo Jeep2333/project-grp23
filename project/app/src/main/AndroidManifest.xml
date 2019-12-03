@@ -21,6 +21,7 @@
         <activity android:name=".viewclinicemp" />
         <activity android:name=".clinci" />
         <activity android:name=".welcom_staff" />
+        <activity android:name=".Search" />
         <activity android:name=".UpdateAndDeleteService" />
         <activity android:name=".AddServiceToListView" />
         <activity android:name=".AddService" />

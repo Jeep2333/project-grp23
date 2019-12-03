@@ -79,5 +79,7 @@ public class welcomenor extends AppCompatActivity {
                     });
         }
     }
-
+    public void search(View v){
+        startActivity(new Intent(this, Search.class));
+    }
 }
