@@ -103,7 +103,7 @@
             android:layout_weight="1"
             android:background="@color/Red"
             android:onClick="search"
-            android:text="Search Clinic"
+            android:text="Search/Book Clinic"
             android:textColor="#ffffff"
             android:textSize="20dp" />
 

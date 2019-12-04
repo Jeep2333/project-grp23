@@ -1,6 +1,8 @@
 package com.example.group23debug;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.AdapterView;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ListView;
@@ -24,17 +26,13 @@ import java.util.ArrayList;
 public class Search extends AppCompatActivity {
     private EditText address;
     private EditText Name;
-    private EditText month;
-    private EditText day;
-    private EditText hour;
     private Button search;
     private DatabaseReference mRef;
     private DatabaseReference ref;
-    private ClinicInterface[] library;
     private ListView list;
     private FirebaseListAdapter adapter;
-    private ArrayList<SearchClinic> clist=new ArrayList<SearchClinic>();
-    private ArrayList<SearchClinic> slist=new ArrayList<SearchClinic>();
+    private ArrayList<ClinicInterface> clist=new ArrayList<ClinicInterface>();
+    private ArrayList<ClinicInterface> slist=new ArrayList<ClinicInterface>();
     private String a,n;
 
 
@@ -50,9 +48,9 @@ public class Search extends AppCompatActivity {
         a = address.getText().toString();
         n = Name.getText().toString();
         Query query = FirebaseDatabase.getInstance().getReference().child("Search");
-        FirebaseListOptions<SearchClinic> options = new FirebaseListOptions.Builder<SearchClinic>()
+        FirebaseListOptions<ClinicInterface> options = new FirebaseListOptions.Builder<ClinicInterface>()
                 .setLayout(R.layout.singelclinicadm)
-                .setQuery(query,SearchClinic.class)
+                .setQuery(query,ClinicInterface.class)
                 .build();
         adapter = new FirebaseListAdapter(options) {
             @Override
@@ -61,13 +59,24 @@ public class Search extends AppCompatActivity {
                 TextView phoneNumber = v.findViewById(R.id.clinicphonenumberadm);
                 TextView address = v.findViewById(R.id.clinicaddressadm);
 
-                SearchClinic Cli = (SearchClinic) model;
+                ClinicInterface Cli = (ClinicInterface) model;
                 name.setText("Name of Clinic: "+ Cli.getClinicName());
                 phoneNumber.setText("Phone#: " + Cli.getPhoneNumber());
                 address.setText("Address: " + Cli.getAddress());
             }
         };
+
         list.setAdapter(adapter);
+        list.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> adapterView, View view, int position, long id) {
+                Intent book  = new Intent(Search.this, bookClinic.class);
+                ClinicInterface clinic = (ClinicInterface) adapterView.getItemAtPosition(position);
+                book.putExtra("clinic",clinic.getClinicName());
+                startActivity(book);
+            }
+        });
+
     }
 
     public void search(View V){
@@ -100,7 +109,7 @@ public class Search extends AppCompatActivity {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                 for(DataSnapshot ds : dataSnapshot.getChildren()){
-                    clist.add(ds.getValue(SearchClinic.class));
+                    clist.add(ds.getValue(ClinicInterface.class));
                 }
                 ref.setValue(clist);
             }

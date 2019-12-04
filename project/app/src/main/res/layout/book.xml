@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_margin="20dp"
+        android:orientation="vertical"
+        android:padding="20dp">
+
+        <TextView
+            android:id="@+id/clinicname4"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="24sp" />
+
+        <TextView
+            android:id="@+id/clinicaddress4"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="24sp" />
+
+        <TextView
+            android:id="@+id/clinicphonenumber4"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="24sp" />
+
+        <TextView
+            android:id="@+id/clinicinsurance4"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+
+            android:textSize="24sp" />
+
+        <TextView
+            android:id="@+id/clinicpayment5"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="24sp" />
+
+        <TextView
+            android:id="@+id/waittime"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="24sp" />
+
+        <Button
+            android:id="@+id/BOOK"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:background="@color/Red"
+            android:onClick="bookaclinic"
+            android:text="BOOK"
+            android:textColor="@color/common_google_signin_btn_text_dark_pressed"
+            android:textStyle="bold" />
+    </LinearLayout>
+
+</LinearLayout>

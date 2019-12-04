@@ -6,7 +6,6 @@ public class ClinicInterface {
         private String phoneNumber;
         private String address;
         private String Insurance;
-
         private String payment;
 
 

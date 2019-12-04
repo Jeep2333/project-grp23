@@ -19,7 +19,7 @@
         <activity android:name=".ClinicProfile" />
         <activity android:name=".AddClinic" />
         <activity android:name=".viewclinicemp" />
-        <activity android:name=".clinci" />
+        <activity android:name=".bookClinic" />
         <activity android:name=".welcom_staff" />
         <activity android:name=".Search" />
         <activity android:name=".UpdateAndDeleteService" />
